@@ -1,0 +1,300 @@
+:root{
+    --Very-Dark-Magenta: hsl(300, 43%, 22%);
+    --Soft-Pink: hsl(333, 80%, 67%);
+    --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+    --Light-Grayish-Magenta: hsl(300, 24%, 96%);
+    --White: hsl(0, 0%, 100%);
+}
+
+*{
+    margin: 0;
+}
+
+html{
+    min-height: 100%;
+    position: relative;
+}
+
+body{
+    background-color: var(--White);
+    font-family: 'League Spartan', sans-serif;
+    margin-bottom: 40px;
+}
+
+/* Mobile Desing */
+
+@media screen and (max-width: 640px){
+    .header{
+        text-align: center;
+    }
+
+    body{
+        margin-bottom: 10px;
+    }
+
+    .content{
+        display: grid;
+        grid-template-areas: 'header' 'header' 
+            'rated' 'comments';
+        row-gap: 2rem;
+        margin:auto;
+        width: 90%;
+    }
+
+    .header h1{
+        margin: auto;
+        margin-top: 2rem;
+        width: 80%;
+        font-size: 2rem;
+        color: var(--Very-Dark-Magenta);
+        margin-bottom: 1rem;
+    }
+
+    .header p{
+        font-size: large;
+        color: var(--Dark-Grayish-Magenta);
+    }
+
+    .header{
+        grid-area: header;
+    }
+
+    .rated{
+        display: grid;
+        row-gap: 1rem;
+    }
+
+    .rated > div{
+        background-color: var(--Light-Grayish-Magenta);
+        color: var(--Very-Dark-Magenta);
+        text-align: center;
+        padding: 1rem 1rem;
+        border-radius: 1rem;
+    }
+
+    .stars{
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        width: max-content;
+        margin: auto auto 0.5rem auto;
+        column-gap: 0.5rem;
+
+    }
+
+    .rated div p{
+        font-weight: 700;
+    }
+
+    .comments{
+        display: grid;
+        grid-template-rows: auto auto auto;
+        row-gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .card1,.card2,.card3{
+        background-color: var(--Very-Dark-Magenta);
+        border-radius: 1rem;
+        color: var(--White);
+        display: grid;
+        grid-template-rows: auto auto;
+        padding: 2rem 1.5rem;
+    }
+
+    .card-header{
+        display: grid;
+        grid-template-columns: 2.5rem auto;
+        column-gap: 1.7rem;
+        margin-bottom: 1.6rem;
+    }
+
+    .card-header img{
+        border-radius: 100%;
+        width: 100%;
+    }
+
+    .card-header div{
+        display: grid;
+        grid-template-rows: auto auto;
+        row-gap: 0.3rem;
+    }
+
+    .card-header div h3{
+        font-weight: 600;
+
+    }
+
+    .card-header div span{
+        color: var(--Soft-Pink);
+        font-weight: 400;
+        font-size: larger;
+    }
+
+    .card-text p{
+        line-height: 1.3rem;
+        letter-spacing: 1px;
+    }
+
+    .footer {
+        position: absolute;
+        width: 100%;
+        margin: auto;
+        bottom: 0;
+        display: block;
+        background-color: var(--Light-Grayish-Magenta);
+        font-size: 13px;
+        text-align: center;
+    }
+
+
+}
+
+@media screen and (min-width: 640px) and (max-width: 1480px){
+
+    .content{
+        display: grid;
+        grid-template-columns: [x0] 40% [x1] 40% [x2];
+        grid-template-rows: [y0] max-content [y1] 280px [y2];
+        justify-content: center;
+        align-content: center;
+        transform: translateY(10%);
+    }
+
+    .nullContent{
+        display: none;
+    }
+
+    .header{
+        grid-column: x0 / x1;
+    }
+
+    .header h1{
+        color: var(--Very-Dark-Magenta);
+        font-size: 3rem;
+        width: 70%;
+        margin-bottom: 1rem;
+    }
+
+    .header p{
+        color: var(--Dark-Grayish-Magenta);
+        width: 70%;
+        line-height: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .rated{
+        display: grid;
+        grid-template-rows: max-content max-content max-content;
+        row-gap: 1rem;
+        margin: auto 0;
+    }
+
+    .rated > div{
+        display: grid;
+        grid-template-columns: max-content max-content;
+        column-gap: 2rem;
+        background-color: var(--Light-Grayish-Magenta);
+        color: var(--Very-Dark-Magenta);
+        width: 400px;
+        text-align: center;
+        padding: 1rem 2rem;
+        border-radius: 0.6rem;
+    }
+
+    .stars{
+        display: grid;
+        grid-template-columns: max-content max-content max-content max-content max-content;
+        column-gap: 0.4rem;
+    }
+
+    .rated > div p{
+        font-weight: 700;
+        margin: auto 0px;
+    }
+
+    .rated-1{
+        justify-content: left;
+    }
+
+    .rated-2{
+        margin: auto;
+    }
+
+    .rated-3{
+        margin-left: auto;
+    }
+
+    .comments{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-column: x0 / x2;
+        grid-row: y1 / y2;
+        column-gap: 2rem;
+    }
+
+
+    .card1,.card2,.card3{
+        background-color: var(--Very-Dark-Magenta);
+        border-radius: 0.4rem;
+        color: var(--White);
+        display: grid;
+        grid-template-rows: auto auto;
+        padding: 2rem 1.5rem;
+        height: 60%;
+
+    }
+
+    .card-header{
+        display: grid;
+        grid-template-columns: 2.5rem auto;
+        column-gap: 1.7rem;
+        margin-bottom: 1.6rem;
+    }
+
+    .card-header img{
+        border-radius: 100%;
+        width: 100%;
+    }
+
+    .card-header div{
+        display: grid;
+        grid-template-rows: auto auto;
+        row-gap: 0.3rem;
+    }
+
+    .card-header div h3{
+        font-weight: 600;
+
+    }
+
+    .card-header div span{
+        color: var(--Soft-Pink);
+        font-weight: 400;
+        font-size:large;
+    }
+
+    .card-text p{
+        line-height: 1.3rem;
+        letter-spacing: 1px;
+        font-size:smaller
+    }
+
+    .card2{
+        margin: auto;
+    }
+
+    .card3{
+        margin: auto 0 0 0;
+    }
+
+    .footer{
+        position: absolute;
+        bottom: 0;
+        height: 40px;
+        background-color: var(--Light-Grayish-Magenta);
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
